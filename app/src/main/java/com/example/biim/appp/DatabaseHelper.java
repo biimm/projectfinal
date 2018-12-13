@@ -6,18 +6,24 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
-    private static final String DATABASE_NAME = "subject.db";
+    private static final String DATABASE_NAME = "Schedule.db";
     private static final int DATABASE_VERSION = 1;
 
     public static final String TABLE_NAME = "Schedule";
     public static final String COL_SUB = "Subject";
-    public static final String COL_TITLE = "title";
-    public static final String COL_NUMBER = "number";
-    public static final String COL_IMAGE = "image";
+    public static final String COL_DAY = "title";
+    public static final String COL_TIMESTART = "number";
+    public static final String COL_TIMEFINISH = "image";
 
-    public DatabaseHelper(@RecentlyNullable Context context, @RecentlyNullable String name, @RecentlyNullable SQLiteDatabase.CursorFactory factory, int version) {
-        super(context, name, factory, version);
-    }
+    private static final String SQL_CREATE_TABLE_PHONE
+            = "CREATE TABLE " + TABLE_NAME + "("
+            + COL_SUB + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + COL_DAY + " TEXT,"
+            + COL_TIMESTART + " TEXT,"
+            + COL_TIMEFINISH + " TEXT "
+            + ")";
+
+    public DatabaseHelper(Context context) { super(context,"Schedule.db",null,1); }
 
 
     @Override
