@@ -1,5 +1,6 @@
 package com.example.biim.appp;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -15,7 +16,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COL_TIMESTART = "number";
     public static final String COL_TIMEFINISH = "image";
 
-    private static final String SQL_CREATE_TABLE_PHONE
+    private static final String SQL_CREATE_TABLE_SCHEDULE
             = "CREATE TABLE " + TABLE_NAME + "("
             + COL_SUB + " INTEGER PRIMARY KEY AUTOINCREMENT,"
             + COL_DAY + " TEXT,"
@@ -28,6 +29,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
+        db.execSQL(SQL_CREATE_TABLE_SCHEDULE);
+
+        ContentValues cv = new ContentValues();
 
     }
 
