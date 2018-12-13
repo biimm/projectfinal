@@ -9,8 +9,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "subject.db";
     private static final int DATABASE_VERSION = 1;
 
-    public static final String TABLE_NAME = "Subject";
-    public static final String COL_SUB = "";
+    public static final String TABLE_NAME = "Schedule";
+    public static final String COL_SUB = "Subject";
     public static final String COL_TITLE = "title";
     public static final String COL_NUMBER = "number";
     public static final String COL_IMAGE = "image";
